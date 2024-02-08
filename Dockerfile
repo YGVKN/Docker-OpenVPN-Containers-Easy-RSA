@@ -1,5 +1,5 @@
 FROM alpine
-
+# Origin https://github.com/kylemanna/docker-openvpn
 LABEL MAINTAINER="YGVKN/ZHUZHA <denisyagovkin@mail.ru>"
 
 RUN apk add --update nftables openvpn iptables bash easy-rsa openvpn-auth-pam google-authenticator libqrencode && \
