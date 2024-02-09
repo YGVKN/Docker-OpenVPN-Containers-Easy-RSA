@@ -2,7 +2,8 @@ FROM alpine
 
 LABEL MAINTAINER="YGVKN/ZHUZHA <denisyagovkin@mail.ru>"
 
-RUN apk add --update vim nftables openvpn iptables bash easy-rsa openvpn-auth-pam openvpn-auth-ldap google-authenticator libqrencode && \
+RUN apk add --update vim tzdata nftables openvpn iptables bash easy-rsa openvpn-auth-pam openvpn-auth-ldap google-authenticator libqrencode && \
+     ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime && \
      ln -s /usr/share/easy-rsa/easyrsa /usr/local/bin && \
      rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
 
