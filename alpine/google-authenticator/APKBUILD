@@ -1,3 +1,5 @@
+# Contributor: Fabio Napoleoni <f.napoleoni@gmail.com>
+# Maintainer:
 pkgname=google-authenticator
 pkgver=20160207
 pkgrel=1

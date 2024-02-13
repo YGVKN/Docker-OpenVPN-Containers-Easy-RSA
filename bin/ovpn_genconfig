@@ -320,7 +320,7 @@ fi
 
 cat > "$conf" <<EOF
 server $(getroute $OVPN_SERVER)
-verb 3
+verb 7
 key $EASYRSA_PKI/private/${OVPN_CN}.key
 ca $EASYRSA_PKI/ca.crt
 cert $EASYRSA_PKI/issued/${OVPN_CN}.crt
@@ -337,7 +337,12 @@ proto $OVPN_PROTO
 port 1111
 dev $OVPN_DEVICE$OVPN_DEVICEN
 status /tmp/openvpn-status.log
+log /var/log/openvpn.log
 
+#plugin /usr/lib/openvpn/plugins/openvpn-auth-ldap.so /etc/openvpn/auth/ldap.conf
+#username-as-common-name
+#verify-client-cert none
+explicit-exit-notify 1
 user nobody
 group nogroup
 EOF

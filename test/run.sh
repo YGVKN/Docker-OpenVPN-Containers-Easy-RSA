@@ -141,7 +141,7 @@ for dockerImage in "$@"; do
 			# skipping due to -t
 			continue
 		fi
-
+		
 		if [ \
 			! -z "${globalExcludeTests[${testRepo}_$t]}" \
 			-o ! -z "${globalExcludeTests[${testRepo}:${variant}_$t]}" \
@@ -153,7 +153,7 @@ for dockerImage in "$@"; do
 			# skipping due to exclude
 			continue
 		fi
-
+		
 		tests+=( "$t" )
 	done
 	
@@ -162,7 +162,7 @@ for dockerImage in "$@"; do
 	for t in "${tests[@]}"; do
 		(( currentTest+=1 ))
 		echo -ne "\t'$t' [$currentTest/$totalTest]..."
-
+		
 		# run test against dockerImage here
 		# find the script for the test
 		scriptDir="${testPaths[$t]}"
